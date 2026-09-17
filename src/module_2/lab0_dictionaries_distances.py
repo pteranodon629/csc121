@@ -8,9 +8,9 @@ distances = {
 
 def main():
     for distance in distances.values():
-        print(f"{distance} AU is {convert(distance)} m.")
+        print(f"{distance} AU is {convert(distance)} m")
 
 def convert(au):
-    return au * 1495978700
+    return au * 149597870700
 
 main()
