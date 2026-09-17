@@ -12,7 +12,7 @@ def write_letter(receiver, sender):
         Peach's Castle this evening, 7:00 PM.
 
         Sincerely,
-        {sender}
+       {sender}
     +~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~+
     """
 
