@@ -11,7 +11,8 @@ def create_report(spacecraft):
     Name: {spacecraft.get("name", "Unknown")}
     Distance: {spacecraft.get("distance", "Unknown")} AU
     Orbit: {spacecraft.get("orbit", "Unknown")}
+
     ==========================
-"""
+    """
 
 main()
