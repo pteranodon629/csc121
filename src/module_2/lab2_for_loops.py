@@ -7,13 +7,13 @@ def main():
 def write_letter(receiver, sender):
     return f"""
     +~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~+
-    Dear {receiver},
+        Dear {receiver},
 
-    You are cordially invited to a ball at
-    Peach's Castle this evening, 7:00 PM.
+        You are cordially invited to a ball at
+        Peach's Castle this evening, 7:00 PM.
 
-    Sincerely,
-    {sender}
+        Sincerely,
+        {sender}
     +~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~+
     """
 
