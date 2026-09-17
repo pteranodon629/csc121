@@ -3,7 +3,6 @@ def main():
     for name in names:
         print(write_letter(name, "Princess Peach"))
 
-
 def write_letter(receiver, sender):
     return f"""
     +~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~+
