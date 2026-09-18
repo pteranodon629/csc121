@@ -14,5 +14,10 @@ print(results)
 results.reverse()
 print(results)
 
-results.insert(7, "Bowser")
+results.insert(0, "Bowser")
 print(results)
+
+results.remove('Bowser')
+results.insert(6, "Bowser")
+print(results)
+
