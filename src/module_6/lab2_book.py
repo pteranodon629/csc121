@@ -1,7 +1,7 @@
 def main():
     with open("alice.txt", "r", encoding='utf-8') as f:
         contents = f.readlines()
-    chapter1 = contents[52:271]
+    chapter1 = contents[52:272]
     with open("chapter1.txt", "w", newline="", encoding='utf-8') as f:
         f.writelines(chapter1)
 

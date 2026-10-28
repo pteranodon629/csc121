@@ -3,10 +3,9 @@ import numpy as np
 from PIL import Image
 
 def main():
-    with open("views.csv", "r", encoding="utf-8") as file, open("analysis.csv", "w", encoding="utf-8") as analysis:
-        reader = csv.DictReader(file)
+    with open("views.csv", "r", newline="", encoding="utf-8") as views, open("analysis.csv", "w", newline="", encoding="utf-8") as analysis:
+        reader = csv.DictReader(views)
         writer = csv.DictWriter(analysis, fieldnames=reader.fieldnames + ["brightness"])
- #       writer = csv.DictWriter(analysis, fieldnames=["id", "english_title","brightness"])
         writer.writeheader()
 
         for row in reader:
