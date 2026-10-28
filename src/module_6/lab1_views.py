@@ -16,7 +16,7 @@ def main():
             writer.writerow(
                 {
                     "id": row["id"],
-                    "english_title": row["english_title"],
+                    "english_title": row[1],
                     "japanese_title": row["japanese_title"],
                     "brightness": round(brightness, 2),
                 }
