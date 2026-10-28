@@ -8,6 +8,5 @@ def main():
         img.save("out.jpeg")
     
 
-if __name__ == "__main__":
-    main()
+main()
 
