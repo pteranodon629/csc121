@@ -8,7 +8,7 @@ def main():
         "analysis.csv", "w", newline="", encoding="utf-8"
     ) as analysis:
         reader = csv.DictReader(views)
-        writer = csv.DictWriter(analysis, fieldnames=reader.fieldnames + ["brightness"])
+        writer = csv.DictWriter(analysis, fieldnames=["id"] + ["brightness"])
         writer.writeheader()
 
         for row in reader:
@@ -16,8 +16,8 @@ def main():
             writer.writerow(
                 {
                     "id": row["id"],
-                    "english_title": row["english_title"],
-                    "japanese_title": row["japanese_title"],
+                    #"english_title": row["english_title"],
+                    #"japanese_title": row["japanese_title"],
                     "brightness": round(brightness, 2),
                 }
             )
