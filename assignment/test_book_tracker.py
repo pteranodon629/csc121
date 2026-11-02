@@ -1,0 +1,54 @@
+# unit tests for book_tracker.py
+# Kevin K. Lux-Sullivan
+# 27Oct2026
+
+import pytest
+from book_tracker import estimate_reading_time, format_book
+
+
+# --- estimate_reading_time ---
+def test_estimate_whole_hours():
+    assert estimate_reading_time(40) == 1.0
+    assert estimate_reading_time(400) == 10.0
+
+
+def test_estimate_rounds_to_one_decimal():
+    assert estimate_reading_time(438) == 10.9
+    assert estimate_reading_time(412) == 10.3
+
+
+def test_estimate_zero():
+    assert estimate_reading_time(0) == 0.0
+
+
+def test_estimate_str():
+    # use with pytest.raises(TypeError):
+    with pytest.raises(Exception) as e_info:
+        # call estimate_reading_time with a string like "cat"
+        estimate_reading_time("cat")
+        # (you can't divide a string by 40, so Python should raise a TypeError)
+
+
+# --- format_book ---
+def test_format_book():
+    # create a book dictionary for Dune by Frank Herbert, 412 pages, 10.3 hours
+    # assert that format_book(book, 1) returns exactly:
+    assert (
+        format_book(
+            {"title": "Dune", "author": "Frank Herbert", "pages": 412, "hours": 10.3}, 1
+        )
+        == "1. 'Dune' - Frank Herbert (412 pages - approx. 10.3 hours to read)"
+    )
+
+
+def test_format_book_comma_in_title():
+    # create a book dictionary for The Long Way To A Small, Angry Planet
+    #   by , 438 pages, 10.9 hours
+    # assert that format_book(book, 2) returns the line starting with "2. "
+    book = {
+        "title": "The long way to a small, angry planet",
+        "author": "Becky Chambers",
+        "pages": 438,
+        "hours": 10.9,
+    }
+    assert format_book(book, 2)[0:3] == "2. "
